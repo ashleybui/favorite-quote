@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Quotes Library
+    </ion-title>
+    <ion-title>
+        By Ashley Bui 017148246
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h3> Select your favorite quotes</h3>
+  <ion-list *ngFor="let quoteGroup of quoteCollection">
+   
+      <ion-label>
+        <ion-icon [name] ="quoteGroup.icon"></ion-icon>
+        <h2>{{quoteGroup.category | uppercase}}</h2>
+        <p>{{quoteGroup.quotes.length}} quotes</p>
+        <ion-list *ngFor="let quote of quoteGroup.quotes">
+          <ion-item-sliding>
+            <ion-item>
+              <ion-label text-wrap>
+                <h2>{{quote.id}} {{quote.person}}</h2>
+                <p>{{quote.text}}</p>
+              </ion-label>
+            </ion-item>
+            <ion-item-options side="start">
+              <ion-item-option (click)="onAddToFavorite(quote)">
+                <ion-icon name="heart"></ion-icon>Favorite
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-label>
+</ion-list>
+
+     
+</ion-content>

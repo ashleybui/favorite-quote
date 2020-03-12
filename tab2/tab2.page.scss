@@ -1,0 +1,6 @@
+.quotetitle {
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  &:before {content: '#';}
+}

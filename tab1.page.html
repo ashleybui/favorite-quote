@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Favorite Quotes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list *ngFor= "let quote of quotes">
+      <ion-item>
+        <ion-label>
+          <h2> {{quote.text}} </h2>
+          <p>{{quote.person}} </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-row>
+        <ion-col text-center>
+          <ion-button fill="clear" size="small"
+          (click)="onRemoveFromFavorite(quote)" color = "danger">Unfavorite</ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-list>
+</ion-content>
